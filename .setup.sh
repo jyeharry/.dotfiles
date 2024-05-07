@@ -20,5 +20,10 @@ curl -L https://iterm2.com/downloads/stable/latest --output ~/Downloads/iTerm.zi
 unzip ~/Downloads/iTerm.zip -d ~/Applications/ || { echo 'Failed unzipping and installing iTerm2'; exit 1; }
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || { echo 'Failed installing omz'; exit 1; }
+rm ~/.zshrc
+
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
+
+omz reload
 
 echo "Don't forget to set font-hack-nerd-font in terminal preferences"

@@ -15,6 +15,9 @@ alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
 alias gsf='git status --short | cut -c 4- | fzf -m'
 alias gbf='git branch --all | sd "remotes/origin/" "" | fzf -m'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias sb='supabase'
 
 export EDITOR='nvim'
 export NVD="$HOME/.config/nvim/"
@@ -22,16 +25,9 @@ export NVIMRC="$NVD/init.lua"
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$HOME/.local/bin/
 
-eval "$(rbenv init - zsh)"
-
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval $(thefuck --alias)
 
 # fzf's command
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
@@ -67,5 +63,3 @@ HIST_STAMPS="yyyy-mm-dd"
 
 eval "$(zoxide init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"

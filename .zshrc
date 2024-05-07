@@ -105,8 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# eval "$(lenv _shell)" # via cli-local-environment provision
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export MOCK=true
 
@@ -116,4 +114,3 @@ export NVM_DIR="$HOME/.nvm"
 export SKIP_LOGIN=false
 
 source ~/.myzshrc
-

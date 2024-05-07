@@ -1,1 +1,6 @@
+*
 .dotfiles
+!.gitignore
+!.myzshrc
+!.setup.sh
+!.zshrc
