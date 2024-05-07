@@ -48,10 +48,10 @@ _fzf_compgen_dir() {
 	fd --type d . "$1"
 }
 
-HISTFILE=~/.zsh_history
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTORY_IGNORE="(ls|cd|pwd|exit|cd|history).*"
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+export HISTORY_IGNORE="(ls|cd|pwd|exit|cd|history).*"
 setopt EXTENDED_HISTORY     # Write the history file in the ':start:elapsed;command' format.
 setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when the shell exits.
 setopt SHARE_HISTORY        # Share history between all sessions.
