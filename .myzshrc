@@ -1,0 +1,71 @@
+export CLICOLOR=1
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+alias ll='ls -lahFG'
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias zshrc='nvim ~/.zshrc && omz reload'
+alias myzshrc='nvim ~/.myzshrc && omz reload'
+alias gs='git status'
+alias gcm='git commit -m'
+alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
+alias main='git checkout main || git checkout master'
+alias dev='git checkout develop || main'
+alias gsf='git status --short | cut -c 4- | fzf -m'
+alias gbf='git branch --all | sd "remotes/origin/" "" | fzf -m'
+
+export EDITOR='nvim'
+export NVD="$HOME/.config/nvim/"
+export NVIMRC="$NVD/init.lua"
+alias nvd="cd $NVD"
+alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
+
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$HOME/.local/bin/
+
+eval "$(rbenv init - zsh)"
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval $(thefuck --alias)
+
+# fzf's command
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
+# CTRL-T's command
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# ALT-C's command
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+
+# for more info see fzf/shell/completion.zsh
+_fzf_compgen_path() {
+	fd . "$1"
+}
+_fzf_compgen_dir() {
+	fd --type d . "$1"
+}
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTORY_IGNORE="(ls|cd|pwd|exit|cd|history).*"
+setopt EXTENDED_HISTORY     # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY        # Share history between all sessions.
+setopt HIST_IGNORE_DUPS     # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE    # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS    # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY          # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY       # append to history file (Default)
+setopt HIST_NO_STORE        # Don't store history commands
+setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line being added to the history.
+HIST_STAMPS="yyyy-mm-dd"
+
+eval "$(zoxide init zsh)"
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
