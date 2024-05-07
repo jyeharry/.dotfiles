@@ -11,5 +11,6 @@ brew install zsh-syntax-highlighting
 brew install sd
 brew install zoxide
 brew install obsidian
+brew install gh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
