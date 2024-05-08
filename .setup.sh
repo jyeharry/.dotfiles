@@ -2,7 +2,12 @@
 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }
 
-brew install neovim ripgrep fd fzf zsh-autosuggestions font-hack-nerd-font bun tree zsh-syntax-highlighting sd zoxide obsidian gh go python3 || { echo 'Failed brew installing something'; exit 1; }
+if ! command -v brew &> /dev/null; then
+  echo "Installing homebrew"
+  /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || { echo 'Failed to install homebrew'; exit 1; }
+fi
+
+brew install git neovim ripgrep fd fzf zsh-autosuggestions font-hack-nerd-font bun tree zsh-syntax-highlighting sd zoxide obsidian gh go python3 || { echo 'Failed brew-installing something'; exit 1; }
 
 # installs NVM (Node Version Manager)
 if ! command -v nvm &> /dev/null; then
