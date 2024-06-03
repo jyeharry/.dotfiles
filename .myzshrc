@@ -18,6 +18,7 @@ alias gbf='git branch --all | sd "remotes/origin/" "" | fzf -m'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sb='supabase'
+alias cht='cht.sh'
 
 export EDITOR='nvim'
 export NVD="$HOME/.config/nvim/"
@@ -30,6 +31,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/bin/
 
 eval "$(rbenv init - zsh 2>/dev/null)"
 
@@ -69,3 +71,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 eval "$(zoxide init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export fpath=(~/.zsh.d/ $fpath)
+
+autoload -Uz compinit
+compinit
