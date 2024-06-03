@@ -5,3 +5,6 @@
 !.setup.sh
 !.zshrc
 !.iterm2-profile.json
+!bin/*
+!.zsh.d/*
+!.misc/*
