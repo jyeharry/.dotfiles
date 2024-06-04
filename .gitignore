@@ -5,6 +5,7 @@
 !.setup.sh
 !.zshrc
 !.iterm2-profile.json
+!.aerospace.toml
 !bin/
 !.zsh.d/
 !.misc/
