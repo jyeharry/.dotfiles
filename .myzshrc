@@ -75,3 +75,4 @@ export fpath=(~/.zsh.d/ $fpath)
 
 autoload -Uz compinit
 compinit
+open /Applications/AeroSpace.app 2> null
