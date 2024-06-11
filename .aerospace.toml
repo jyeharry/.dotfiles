@@ -2,6 +2,7 @@
 
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
+start-at-login = true
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/iTerm.app/'

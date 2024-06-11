@@ -73,6 +73,6 @@ eval "$(zoxide init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export fpath=(~/.zsh.d/ $fpath)
 
+# I think this was for autocompletion for some tool
 autoload -Uz compinit
 compinit
-open /Applications/AeroSpace.app 2> /dev/null
