@@ -37,4 +37,4 @@ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
 
 omz reload
 
-echo "Don't forget to set font-hack-nerd-font in terminal preferences"
+echo "Don't forget to set Hack Nerd Font Mono in terminal preferences"
