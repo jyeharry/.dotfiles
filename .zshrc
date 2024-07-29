@@ -73,8 +73,6 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 plugins=(
   git
   fzf
-  fd
-  ripgrep
 )
 
 source $ZSH/oh-my-zsh.sh
