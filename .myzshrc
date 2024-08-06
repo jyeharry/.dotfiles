@@ -19,6 +19,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias df="dotfiles"
 alias sb='supabase'
 alias cht='cht.sh'
+alias alrg='alias | rg'
 
 export EDITOR='nvim'
 export NVD="$HOME/.config/nvim/"
