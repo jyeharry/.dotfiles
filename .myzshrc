@@ -1,26 +1,30 @@
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
-alias ll='ls -lahFG'
-alias .='pwd'
-alias ..='cd ..'
-alias ...='cd ../..'
+# general aliases
 alias ....='cd ../../..'
-alias zshrc='nvim ~/.zshrc && omz reload'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias .='pwd'
+alias alrg='alias | rg'
+alias cht='cht.sh'
+alias ll='ls -lahFG'
 alias myzshrc='nvim ~/.myzshrc && omz reload'
-alias gs='git status'
-alias gcm='git commit -m'
-alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
-alias main='git checkout main || git checkout master'
-alias dev='git checkout develop || main'
-alias gsf='git status --short | cut -c 4- | fzf -m'
-alias gbf='git branch --all | sd "remotes/origin/" "" | fzf -m'
+alias sb='supabase'
+alias zshrc='nvim ~/.zshrc && omz reload'
+
+# git aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias df="dotfiles"
-alias sb='supabase'
-alias cht='cht.sh'
-alias alrg='alias | rg'
+alias gbf='git branch --all | sd "remotes/origin/" "" | fzf -m'
+alias gcm='git commit -m'
+alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
+alias gs='git status'
+alias gsf='git status --short | cut -c 4- | fzf -m'
+alias dev='git checkout develop || main'
+alias main='git checkout main || git checkout master'
 
+# nvim
 export EDITOR='nvim'
 export NVD="$HOME/.config/nvim/"
 export NVIMRC="$NVD/init.lua"
