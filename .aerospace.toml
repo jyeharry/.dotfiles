@@ -96,6 +96,10 @@ if.app-id = 'com.apple.dt.Xcode'
 run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
+if.app-id = 'com.google.android.studio'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 if.during-aerospace-startup = false
 run = 'move-node-to-workspace 9'
