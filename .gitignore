@@ -1,6 +1,7 @@
 *
 .dotfiles
 !.gitignore
+!.ideavimrc
 !.myzshrc
 !.setup.sh
 !.zshrc
