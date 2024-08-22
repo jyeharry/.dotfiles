@@ -6,6 +6,9 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 noremap H ^
 noremap L $
+nnoremap Y y$
+nnoremap <C-h> :bp<CR>
+nnoremap <C-l> :bn<CR>
 
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
