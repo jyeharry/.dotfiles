@@ -1,0 +1,11 @@
+set scrolloff=999
+set relativenumber
+set clipboard+=unnamed
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+noremap H ^
+noremap L $
+
+Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
