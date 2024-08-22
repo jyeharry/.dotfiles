@@ -1,6 +1,8 @@
 set scrolloff=999
 set relativenumber
 set clipboard+=unnamed
+set iskeyword=@,48-57,192-255
+
 
 inoremap jk <Esc>
 inoremap kj <Esc>
