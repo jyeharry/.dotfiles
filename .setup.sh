@@ -8,7 +8,7 @@ if ! command -v brew &> /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew install git neovim ripgrep fd fzf zsh-autosuggestions pngpaste font-hack-nerd-font oven-sh/bun/bun tree zsh-syntax-highlighting sd zoxide obsidian gh go python3 rlwrap swiftlint swift-format composer && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
+brew install git neovim ripgrep fd fzf zsh-autosuggestions pngpaste font-hack-nerd-font oven-sh/bun/bun tree zsh-syntax-highlighting sd zoxide obsidian gh go python3 rlwrap swiftlint swift-format composer rbenv && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
 
 # installs NVM (Node Version Manager)
 if [ ! -d "$HOME/.nvm" ]; then
