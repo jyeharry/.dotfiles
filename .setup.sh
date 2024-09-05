@@ -8,7 +8,30 @@ if ! command -v brew &> /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew install git neovim ripgrep fd fzf zsh-autosuggestions pngpaste font-hack-nerd-font oven-sh/bun/bun tree zsh-syntax-highlighting sd zoxide obsidian gh go python3 rlwrap swiftlint swift-format composer rbenv && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
+brew install \
+  composer \
+  fd \
+  font-hack-nerd-font \
+  fzf \
+  gh \
+  git \
+  go \
+  neovim \
+  obsidian \
+  oven-sh/bun/bun \
+  pngpaste \
+  python3 \
+  rbenv \
+  ripgrep \
+  rlwrap \
+  sd \
+  swift-format \
+  swiftlint \
+  tree \
+  zoxide \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting \
+  && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
 
 # installs NVM (Node Version Manager)
 if [ ! -d "$HOME/.nvm" ]; then
@@ -22,7 +45,7 @@ fi
 # download and install Node.js
 if ! command -v node &> /dev/null; then
   echo "\nInstalling node"
-  nvm install 22 || { echo 'Failed nvm installing node'; exit 1; }
+  nvm install node || { echo 'Failed nvm installing node'; exit 1; }
 fi
 
 if [[ -d "/Applications/iTerm.app" ]]; then
