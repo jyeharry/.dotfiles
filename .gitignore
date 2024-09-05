@@ -13,3 +13,4 @@
 !bin/*
 !.zsh.d/*
 !.misc/*
+!.rectangle-config.json
