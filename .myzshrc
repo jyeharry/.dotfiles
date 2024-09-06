@@ -33,9 +33,12 @@ alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export ANDROID_SDK_HOME=$HOME/.android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
 export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/bin/
 
