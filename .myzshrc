@@ -24,6 +24,7 @@ alias gsf='git status --short | cut -c 4- | fzf -m'
 alias dev='git checkout develop || main'
 alias main='git checkout main || git checkout master'
 alias gcmnv='git commit --no-verify -m'
+alias gshbr="gsh develop..$(git_current_branch)"
 
 # nvim
 export EDITOR='nvim'
@@ -44,6 +45,23 @@ export PATH=$PATH:$HOME/bin/
 
 export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init - --rehash zsh 2>/dev/null)"
+export PATH="/Users/jye.harry/.rbenv/shims:${PATH}"
+export RBENV_SHELL=zsh
+command rbenv rehash 2>/dev/null
+rbenv() {
+  local command
+  command="${1:-}"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(rbenv "sh-$command" "$@")";;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
