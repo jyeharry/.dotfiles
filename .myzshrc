@@ -32,6 +32,7 @@ export NVD="$HOME/.config/nvim/"
 export NVIMRC="$NVD/init.lua"
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
+export SOLARGRAPH_GLOBAL_CONFIG="$NVD/config/lsps/solargraph-config.yml"
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export ANDROID_SDK_HOME=$HOME/.android
