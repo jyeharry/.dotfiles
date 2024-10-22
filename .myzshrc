@@ -12,6 +12,9 @@ alias ll='ls -lahFG'
 alias myzshrc='nvim ~/.myzshrc && omz reload'
 alias sb='supabase'
 alias zshrc='nvim ~/.zshrc && omz reload'
+alias simlist='xcrun simctl list devices | nvim -R'
+alias simboot='xcrun simctl boot'
+alias simshut='xcrun simctl shutdown'
 
 # git aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
