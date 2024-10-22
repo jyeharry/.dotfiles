@@ -73,6 +73,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 plugins=(
   git
   fzf
+  rails
 )
 
 source $ZSH/oh-my-zsh.sh
