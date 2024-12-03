@@ -113,3 +113,6 @@ export NVM_DIR="$HOME/.nvm"
 export SKIP_LOGIN=false
 
 source ~/.myzshrc
+
+# bun completions
+[ -s "/Users/jye.harry/.bun/_bun" ] && source "/Users/jye.harry/.bun/_bun"
