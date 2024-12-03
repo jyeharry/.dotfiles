@@ -1,0 +1,28 @@
+#! /bin/zsh
+
+bak1="nvim.bak"
+bak2="nvim.bak2"
+
+if [ -d ~/.config/$bak1 ]; then
+  mv ~/.config/nvim ~/.config/$bak2
+  mv ~/.local/share/nvim ~/.local/share/$bak2
+  mv ~/.local/state/nvim ~/.local/state/$bak2
+  mv ~/.cache/nvim ~/.cache/$bak2
+
+  mv ~/.config/$bak1 ~/.config/nvim
+  mv ~/.local/share/$bak1 ~/.local/share/nvim
+  mv ~/.local/state/$bak1 ~/.local/state/nvim
+  mv ~/.cache/$bak1 ~/.cache/nvim
+elif [ -d ~/.config/$bak2 ]; then
+  mv ~/.config/nvim ~/.config/$bak1
+  mv ~/.local/share/nvim ~/.local/share/$bak1
+  mv ~/.local/state/nvim ~/.local/state/$bak1
+  mv ~/.cache/nvim ~/.cache/$bak1
+  
+  mv ~/.config/$bak2 ~/.config/nvim
+  mv ~/.local/share/$bak2 ~/.local/share/nvim
+  mv ~/.local/state/$bak2 ~/.local/state/nvim
+  mv ~/.cache/$bak2 ~/.cache/nvim
+else
+  echo "no config backups found"
+fi
