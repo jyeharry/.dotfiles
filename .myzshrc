@@ -29,6 +29,8 @@ alias main='git checkout main || git checkout master'
 alias gcmnv='git commit --no-verify -m'
 alias gshbr="gsh develop..$(git_current_branch)"
 
+unalias sd
+
 # nvim
 export EDITOR='nvim'
 export NVD="$HOME/.config/nvim/"
