@@ -113,3 +113,6 @@ export fpath=(~/.zsh.d/ $fpath)
 # I think this was for autocompletion for some tool
 autoload -Uz compinit
 compinit
+
+# Use vi bindings in terminal
+set -o vi
