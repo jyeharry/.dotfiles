@@ -107,6 +107,13 @@
   "Use Italic Font" : true,
   "Unlimited Scrollback" : true,
   "Keyboard Map" : {
+    "0x4b-0x120000-0x28" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 9,
+      "Text" : "",
+      "Escaping" : 2
+    },
     "0xf728-0x80000" : {
       "Text" : "d",
       "Action" : 10
@@ -116,6 +123,13 @@
       "Apply Mode" : 1,
       "Action" : 10,
       "Text" : "[A",
+      "Escaping" : 2
+    },
+    "0x6b-0x100000-0x28" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 7,
+      "Text" : "",
       "Escaping" : 2
     },
     "0xf702-0x280000" : {
@@ -129,6 +143,20 @@
     "0x7f-0x80000" : {
       "Text" : "0x1b 0x7f",
       "Action" : 11
+    },
+    "0x4a-0x120000-0x26" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 8,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x6a-0x100000-0x26" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 6,
+      "Text" : "",
+      "Escaping" : 2
     },
     "0xf708-0x20000" : {
       "Text" : "[15;2~",
