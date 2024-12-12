@@ -1,6 +1,6 @@
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
-export FZF_PREVIEW_OPTS='--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
+export FZF_PREVIEW_BIND_OPTS='--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 
 # general aliases
 alias ....='cd ../../..'
@@ -18,6 +18,43 @@ alias simshut='xcrun simctl shutdown'
 alias zshrc='nvim ~/.zshrc && omz reload'
 unalias sd
 
+fzf-man-widget() {
+  batman="man {1} | col -bx | bat --language=man --plain --color always --theme=\"Monokai Extended\""
+   man -k . | sd '\(\d+\)' '' | sort \
+   | awk -v cyan=$(tput setaf 6) -v blue=$(tput setaf 4) -v res=$(tput sgr0) -v bld=$(tput bold) '{ $1=cyan bld $1; $2=res blue;} 1' \
+   | fzf  \
+      -q "$1" \
+      --ansi \
+      --tiebreak=begin \
+      --prompt=' Man > '  \
+      --preview-window 'wrap,50%,rounded,<50(up,85%,border-bottom)' \
+      --preview "${batman}" \
+      --bind "enter:execute(man {1})" \
+      --bind "alt-c:+change-preview(cht.sh {1})+change-prompt(ﯽ Cheat > )" \
+      --bind "alt-m:+change-preview(${batman})+change-prompt( Man > )" \
+      --bind "alt-t:+change-preview(tldr --color=always {1})+change-prompt(ﳁ TLDR > )" \
+      $FZF_PREVIEW_BIND_OPTS
+  zle reset-prompt
+}
+# `Ctrl-H` keybinding to launch the widget (this widget works only on zsh, don't know how to do it on bash and fish (additionaly pressing`ctrl-backspace` will trigger the widget to be executed too because both share the same keycode)
+bindkey '^h' fzf-man-widget
+zle -N fzf-man-widget
+
+# fkill - kill processes - list only the ones you can kill.
+fkill() {
+    local pid 
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi  
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi  
+}
+
 # git aliases
 alias df="dotfiles"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -30,9 +67,9 @@ alias gcmf='git log --graph --color --format="%C(white)%h - %C(green)%cs - %C(bl
     " \
       | sd "^.*([a-f0-9]{8}).*$" "\$1"'
 # fzf branches
-alias gbf='git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi -m --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_OPTS | sd "^\* " ""'
+alias gbf='git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi -m --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_BIND_OPTS --preview-window wrap | sd "^\* " ""'
 # fzf branches and checkout result
-alias gcof='git checkout $(git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_OPTS | sd "^\* " "")'
+alias gcof='git checkout $(git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_BIND_OPTS | sd "^\* " "")'
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
 alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
@@ -91,6 +128,12 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="
+  --height 100%
+  --preview-window wrap,down,75%
+  --preview 'bat -n --color=always {}'
+  $FZF_PREVIEW_BIND_OPTS
+"
 # ALT-C's command
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 

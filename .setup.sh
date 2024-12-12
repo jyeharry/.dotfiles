@@ -9,6 +9,7 @@ if ! command -v brew &> /dev/null; then
 fi
 
 brew install \
+  bat \
   composer \
   fd \
   font-hack-nerd-font \
