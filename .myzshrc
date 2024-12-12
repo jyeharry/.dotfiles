@@ -58,23 +58,10 @@ fkill() {
 # git aliases
 alias df="dotfiles"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-# fzf git commits
-alias gcmf='git log --graph --color --format="%C(white)%h - %C(green)%cs - %C(blue)%s%C(red)%d" \
-  | fzf --ansi --reverse --no-sort --preview="
-    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
-    && [[ $hash != "" ]] \
-    && git show --color $hash
-    " \
-      | sd "^.*([a-f0-9]{8}).*$" "\$1"'
-# fzf branches
-alias gbf='git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi -m --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_BIND_OPTS --preview-window wrap | sd "^\* " ""'
-# fzf branches and checkout result
-alias gcof='git checkout $(git branch --all --color --format="%(HEAD) %(color:green)%(refname:short)" | fzf --ansi --preview "git log --stat --color develop..{1} 2>/dev/null || git log --stat --color main..{1}" $FZF_PREVIEW_BIND_OPTS | sd "^\* " "")'
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
 alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
 alias gs='git status'
-alias gsf="git status --short | cut -c 4- | sd '\"' '' | sd ' ' '\ ' | fzf -m"
 # show changes from develop to current branch
 alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)"
 alias gweb="open $(git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://')" 
