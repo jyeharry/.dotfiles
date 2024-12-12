@@ -118,7 +118,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
   --height 100%
   --preview-window wrap,down,75%
-  --preview 'bat -n --color=always {}'
+  --preview '[[ -d {} ]] && ls -lahF --color=always {} || bat -n --color=always {}'
   $FZF_PREVIEW_BIND_OPTS
 "
 # ALT-C's command
