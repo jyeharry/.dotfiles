@@ -119,6 +119,8 @@ export FZF_CTRL_T_OPTS="
   --height 100%
   --preview-window wrap,down,75%
   --preview '[[ -d {} ]] && ls -lahF --color=always {} || bat -n --color=always {}'
+  --header 'CTRL-Y (copy selection)\n'
+  --bind 'ctrl-y:execute-silent(pbcopy <<< {})+abort'
   $FZF_PREVIEW_BIND_OPTS
 "
 # ALT-C's command
