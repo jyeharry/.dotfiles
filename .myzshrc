@@ -1,6 +1,7 @@
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 export FZF_PREVIEW_BIND_OPTS='--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
+export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml"
 
 # general aliases
 alias ....='cd ../../..'
@@ -19,15 +20,18 @@ alias simshut='xcrun simctl shutdown'
 alias zshrc='nvim ~/.zshrc && omz reload'
 unalias sd
 
+# theme for fzf
+sh ~/tokyonight.nvim/extras/fzf/tokyonight_night.sh
+
 fzf-man-widget() {
   batman="man {1} | col -bx | bat --language=man --plain --color always --theme=\"Monokai Extended\""
-   man -k . | sd '\(\d+\)' '' | sort \
-   | awk -v cyan=$(tput setaf 6) -v blue=$(tput setaf 4) -v res=$(tput sgr0) -v bld=$(tput bold) '{ $1=cyan bld $1; $2=res blue;} 1' \
-   | fzf  \
+  man -k . | sd '\(\d+\)' '' | sort |
+    awk -v cyan=$(tput setaf 6) -v blue=$(tput setaf 4) -v res=$(tput sgr0) -v bld=$(tput bold) '{ $1=cyan bld $1; $2=res blue;} 1' |
+    fzf \
       -q "$1" \
       --ansi \
       --tiebreak=begin \
-      --prompt=' Man > '  \
+      --prompt=' Man > ' \
       --preview-window 'wrap,50%,rounded,<50(up,85%,border-bottom)' \
       --preview "${batman}" \
       --bind "enter:execute(man {1})" \
@@ -43,17 +47,16 @@ zle -N fzf-man-widget
 
 # fkill - kill processes - list only the ones you can kill.
 fkill() {
-    local pid 
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi  
+  local pid
+  if [ "$UID" != "0" ]; then
+    pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+  else
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  fi
 
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi  
+  if [ "x$pid" != "x" ]; then
+    echo $pid | xargs kill -${1:-9}
+  fi
 }
 
 # git aliases
@@ -65,7 +68,7 @@ alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-loc
 alias gs='git status'
 # show changes from develop to current branch
 alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)"
-alias gweb="open $(git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://')" 
+alias gweb="open $(git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://')"
 alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
 
@@ -103,10 +106,12 @@ rbenv() {
   fi
 
   case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
+  rehash | shell)
+    eval "$(rbenv "sh-$command" "$@")"
+    ;;
   *)
-    command rbenv "$command" "$@";;
+    command rbenv "$command" "$@"
+    ;;
   esac
 }
 
@@ -140,10 +145,10 @@ _fzf_git_fzf() {
 
 # for more info see fzf/shell/completion.zsh
 _fzf_compgen_path() {
-	fd . "$1"
+  fd . "$1"
 }
 _fzf_compgen_dir() {
-	fd --type d . "$1"
+  fd --type d . "$1"
 }
 
 export HISTFILE=~/.zsh_history

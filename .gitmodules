@@ -1,3 +1,6 @@
 [submodule "scripts/fzf-git"]
 	path = scripts/fzf-git
 	url = https://github.com/junegunn/fzf-git.sh
+[submodule "tokyonight.nvim"]
+	path = tokyonight.nvim
+	url = git@github.com:folke/tokyonight.nvim.git
