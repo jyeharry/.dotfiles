@@ -1,6 +1,7 @@
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 export FZF_PREVIEW_BIND_OPTS='--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
+export FZF_DEFAULT_OPTS='--bind change:first'
 export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml"
 
 # general aliases
@@ -124,7 +125,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
   --height 100%
   --preview-window wrap,down,75%
-  --preview '[[ -d {} ]] && ls -lahF --color=always {} || bat -n --color=always {}'
+  --preview '[[ -d {} ]] && tree -FC --gitignore {} || bat -n --color=always {}'
   --header 'CTRL-Y (copy selection)\n'
   --bind 'ctrl-y:execute-silent(pbcopy <<< {})+abort'
   $FZF_PREVIEW_BIND_OPTS
