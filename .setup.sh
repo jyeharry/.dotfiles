@@ -17,6 +17,7 @@ brew install \
   gh \
   git \
   go \
+  lazygit \
   neovim \
   obsidian \
   oven-sh/bun/bun \
