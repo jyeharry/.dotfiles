@@ -2,8 +2,7 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 export FZF_PREVIEW_BIND_OPTS='--bind=ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 export FZF_DEFAULT_OPTS='--bind change:first'
-export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml"
-export XDG_CONFIG_HOME="$HOME/.config"
+export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml,$HOME/.config/lazygit/config.yml"
 
 # general aliases
 alias ....='cd ../../..'
