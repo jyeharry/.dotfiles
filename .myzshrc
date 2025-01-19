@@ -69,7 +69,8 @@ alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-loc
 alias gs='git status'
 # show changes from develop to current branch
 alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)"
-alias gweb="open $(git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://')"
+alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://'"
+alias gweb="open $(gurl)"
 alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
 
@@ -176,3 +177,5 @@ export fpath=(~/.zsh.d/ $fpath)
 # I think this was for autocompletion for some tool
 autoload -Uz compinit
 compinit
+
+eval "$(starship init zsh)"
