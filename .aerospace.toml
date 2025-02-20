@@ -5,8 +5,6 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 start-at-login = true
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget open -n /Applications/iTerm.app/'
-
 alt-j = 'focus left'
 alt-k = 'focus down'
 alt-l = 'focus up'
