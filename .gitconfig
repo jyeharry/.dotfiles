@@ -1,4 +1,4 @@
 [include]
-  path = ~/.gitconfig.user
+  path = ~/.user.gitconfig
 [push]
 	autoSetupRemote = true
