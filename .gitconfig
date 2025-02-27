@@ -1,4 +1,37 @@
 [include]
-  path = ~/.user.gitconfig
+  path = ~/.local.gitconfig
 [push]
 	autoSetupRemote = true
+	followTags = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+	mnemonicPrefix = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	updateRefs = true
+	autoStash = true
+	autoSquash = true
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = zdiff3
+[init]
+	defaultBranch = main
