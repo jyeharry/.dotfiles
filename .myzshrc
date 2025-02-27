@@ -21,6 +21,25 @@ alias simshut='xcrun simctl shutdown'
 alias zshrc='nvim ~/.zshrc && omz reload'
 unalias sd
 
+_rails_command() {
+  if [[ -f ./bin/rails ]]; then
+    ./bin/rails "$@"
+  else
+    command rails "$@"
+  fi
+}
+
+_rake_command() {
+  if [[ -f ./bin/rake ]]; then
+    ./bin/rake "$@"
+  else
+    command rake "$@"
+  fi
+}
+
+rails=_rails_command
+rake=_rake_command
+
 # theme for fzf
 sh ~/tokyonight.nvim/extras/fzf/tokyonight_night.sh
 
