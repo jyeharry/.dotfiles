@@ -1,9 +1,16 @@
 *
 .dotfiles
 !.aerospace.toml
+!.config/
+.config/*
 !.config/bat/
+!.config/bat/*
+!.config/karabiner/
 !.config/karabiner/assets/
+!.config/karabiner/assets/**/*
 !.config/karabiner/karabiner.json
+!.config/lazygit/
+.config/lazygit/*
 !.config/lazygit/config.yml
 !.config/starship.toml
 !.gitconfig
