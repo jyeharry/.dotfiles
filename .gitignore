@@ -1,3 +1,5 @@
+*
+.dotfiles
 !.aerospace.toml
 !.config/bat/
 !.config/karabiner/assets/
@@ -19,5 +21,3 @@
 !bin/
 !bin/*
 !scripts
-*
-.dotfiles
