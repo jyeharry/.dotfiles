@@ -1,6 +1,15 @@
 #! /bin/zsh
 
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }
+dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# clone dotfiles if it doesn't already exist
+if [ ! -d ~/.dotfiles ]; then
+  echo "Cloning .dotfiles"
+  git clone --bare git@github.com:jyeharry/.dotfiles.git ~/.dotfiles || { echo "Failed cloning .dotfiles"; exit 1 }
+  $dotfiles checkout -f || { echo "Failed checking out .dotfiles"; exit 1 }
+fi
+
+$dotfiles config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }
 
 if ! command -v brew &> /dev/null; then
   echo "\nInstalling homebrew"
@@ -60,9 +69,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "\nInstalling ohmyzsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || { echo 'Failed installing omz'; exit 1; }
   rm ~/.zshrc
+  # we don't care about ohmyzsh's .zshrc or the default system .zshrc, so checkout our own
+  $dotfiles checkout .zshrc
 fi
-
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout .zshrc
 
 source ~/.zshrc
 

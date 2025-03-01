@@ -1,5 +1,9 @@
-*
 !.aerospace.toml
+!.config/bat/
+!.config/karabiner/assets/
+!.config/karabiner/karabiner.json
+!.config/lazygit/config.yml
+!.config/starship.toml
 !.gitconfig
 !.gitignore
 !.ideavimrc
@@ -15,4 +19,5 @@
 !bin/
 !bin/*
 !scripts
+*
 .dotfiles
