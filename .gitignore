@@ -4,7 +4,7 @@
 !.config/
 .config/*
 !.config/bat/
-!.config/bat/*
+!.config/bat/**/*
 !.config/karabiner/
 !.config/karabiner/assets/
 !.config/karabiner/assets/**/*
