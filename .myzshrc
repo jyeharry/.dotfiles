@@ -190,6 +190,9 @@ setopt HIST_NO_STORE        # Don't store history commands
 setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line being added to the history.
 HIST_STAMPS="yyyy-mm-dd"
 
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
 eval "$(zoxide init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export fpath=(~/.zsh.d/ $fpath)
