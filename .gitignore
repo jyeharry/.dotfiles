@@ -13,6 +13,8 @@
 .config/lazygit/*
 !.config/lazygit/config.yml
 !.config/starship.toml
+!.config/yazi
+!.config/yazi/*
 !.gitconfig
 !.gitignore
 !.ideavimrc
