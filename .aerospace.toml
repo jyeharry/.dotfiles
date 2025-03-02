@@ -129,7 +129,7 @@ run = 'move-node-to-workspace m'
 8 = 'main'
 9 = 'main'
 10 = 'main'
-'m' = 'secondary'
+'m' = 'main'
 
 [mode.resize.binding]
 h = 'resize width -50'
