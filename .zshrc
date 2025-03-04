@@ -218,6 +218,11 @@ bindkey '^[[B' down-line-or-search
 bindkey '^h' fzf-man-widget
 zle -N fzf-man-widget
 
+# open command line in the editor
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
 
 # -------- ALIASES & COMMANDS --------
 
