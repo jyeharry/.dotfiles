@@ -1,5 +1,7 @@
 [include]
   path = ~/.local.gitconfig
+[core]
+  pager = less -+F -+X
 [push]
 	autoSetupRemote = true
 	followTags = true
