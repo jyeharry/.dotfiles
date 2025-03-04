@@ -98,14 +98,6 @@ setopt HIST_NO_STORE        # Don't store history commands
 setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line being added to the history.
 
 
-# -------- EVALS --------
-
-eval "$(fzf --zsh)"
-eval "$(rbenv init - --rehash zsh 2>/dev/null)"
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
-
 # -------- ZINIT --------
 
 # zinit plugins
@@ -267,6 +259,14 @@ alias dev='git checkout develop || main'
 
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
+
+
+# -------- EVALS --------
+
+eval "$(fzf --zsh)"
+eval "$(rbenv init - --rehash zsh 2>/dev/null)"
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 
 # -------- COMPLETIONS --------
