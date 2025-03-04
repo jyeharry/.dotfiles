@@ -126,9 +126,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -lahFG --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide:*' fzf-preview 'ls -lahFG --color $realpath'
 
-# load completions
-autoload -U compinit && compinit
-
 
 # -------- FUNCTIONS --------
 
@@ -270,6 +267,11 @@ alias dev='git checkout develop || main'
 
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
+
+
+# -------- COMPLETIONS --------
+
+autoload -U compinit && compinit
 
 
 # -------- LOCAL CONFIGS --------
