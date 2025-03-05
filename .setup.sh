@@ -21,37 +21,34 @@ brew install \
   bat \
   composer \
   fd \
+  ffmpeg \
+  fnm \
   font-hack-nerd-font \
   fzf \
   gh \
   git \
   go \
+  imagemagick \
   lazygit \
   neovim \
   obsidian \
   oven-sh/bun/bun \
   pngpaste \
+  poppler \
   python3 \
   rbenv \
   ripgrep \
   rlwrap \
   sd \
+  sevenzip \
   swift-format \
   swiftlint \
   tree \
   zoxide \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
+  && brew install yazi --HEAD \
   && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
-
-# installs NVM (Node Version Manager)
-if [ ! -d "$HOME/.nvm" ]; then
-  echo "\nInstalling nvm"
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash || { echo 'Failed installing nvm'; exit 1; }
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-fi
 
 # download and install Node.js
 if ! command -v node &> /dev/null; then
@@ -65,14 +62,6 @@ if [[ -d "/Applications/iTerm.app" ]]; then
   unzip ~/Downloads/iTerm.zip -d ~/Applications/ || { echo 'Failed unzipping and installing iTerm2'; exit 1; }
 fi
 
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "\nInstalling ohmyzsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || { echo 'Failed installing omz'; exit 1; }
-  rm ~/.zshrc
-  # we don't care about ohmyzsh's .zshrc or the default system .zshrc, so checkout our own
-  $dotfiles checkout .zshrc
-fi
-
-source ~/.zshrc
+exec zsh
 
 echo "\nDon't forget to set Hack Nerd Font Mono in terminal preferences"
