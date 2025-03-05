@@ -111,6 +111,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::fzf
 zinit snippet OMZP::rails
 zinit snippet OMZL::git.zsh
+zinit snippet OMZL::key-bindings.zsh
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -209,19 +210,9 @@ _fzf_compgen_dir() {
 
 # -------- KEY BINDS --------
 
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-
 # `Ctrl-H` keybinding to launch the widget (this widget works only on zsh, don't know how to do it on bash and fish (additionaly pressing`ctrl-backspace` will trigger the widget to be executed too because both share the same keycode)
 bindkey '^h' fzf-man-widget
 zle -N fzf-man-widget
-
-# open command line in the editor
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^X^E' edit-command-line
 
 
 # -------- ALIASES & COMMANDS --------
@@ -240,12 +231,11 @@ alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
 alias lg='lazygit'
 alias ll='ls -lahFG'
-alias myzshrc='nvim ~/.myzshrc && omz reload'
 alias sb='supabase'
 alias simboot='xcrun simctl boot'
 alias simlist='xcrun simctl list devices | nvim -R'
 alias simshut='xcrun simctl shutdown'
-alias zshrc='nvim ~/.zshrc && omz reload'
+alias zshrc='nvim ~/.zshrc'
 
 # git aliases
 alias df="dotfiles"
