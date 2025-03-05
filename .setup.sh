@@ -6,10 +6,9 @@ dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 if [ ! -d ~/.dotfiles ]; then
   echo "Cloning .dotfiles"
   git clone --bare git@github.com:jyeharry/.dotfiles.git ~/.dotfiles || { echo "Failed cloning .dotfiles"; exit 1 }
-  $dotfiles checkout -f || { echo "Failed checking out .dotfiles"; exit 1 }
+  eval "$dotfiles checkout -f || { echo \"Failed checking out .dotfiles\"; exit 1 }"
+  eval "$dotfiles config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }"
 fi
-
-$dotfiles config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }
 
 if ! command -v brew &> /dev/null; then
   echo "\nInstalling homebrew"
