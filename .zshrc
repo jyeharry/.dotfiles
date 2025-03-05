@@ -79,7 +79,7 @@ sh ~/tokyonight.nvim/extras/fzf/tokyonight_night.sh
 FNM_PATH="/Users/jyeharry/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/jyeharry/Library/Application Support/fnm:$PATH"
-  eval "`fnm env`"
+  _evalcache fnm env --use-on-cd --version-file-strategy=recursive --shell zsh
 fi
 
 
@@ -101,10 +101,10 @@ setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line b
 # -------- ZINIT --------
 
 # zinit plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'0' lucid
 zinit light Aloxaf/fzf-tab
+
+zinit light mroth/evalcache
 
 # zinit snippets
 zinit snippet OMZP::git
@@ -181,7 +181,7 @@ rbenv() {
 
   case "$command" in
     rehash | shell)
-      eval "$(rbenv "sh-$command" "$@")"
+      _evalcache rbenv "sh-$command" "$@"
       ;;
     *)
       command rbenv "$command" "$@"
@@ -235,7 +235,7 @@ alias sb='supabase'
 alias simboot='xcrun simctl boot'
 alias simlist='xcrun simctl list devices | nvim -R'
 alias simshut='xcrun simctl shutdown'
-alias zshrc='nvim ~/.zshrc'
+alias zshrc='nvim ~/.zshrc && exec zsh'
 
 # git aliases
 alias df="dotfiles"
@@ -256,20 +256,32 @@ alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
 
-# -------- EVALS --------
-
-eval "$(fzf --zsh)"
-eval "$(rbenv init - --rehash zsh 2>/dev/null)"
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
-
-# -------- COMPLETIONS --------
-
-autoload -U compinit && compinit
-
-
 # -------- LOCAL CONFIGS --------
 
 [[ -f ~/.local.zshrc ]] && source ~/.local.zshrc
+
+
+#  -------- LAST --------
+
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-completions
+
+_evalcache fzf --zsh
+_evalcache rbenv init - --rehash zsh
+_evalcache zoxide init zsh
+_evalcache starship init zsh
+
+autoload -Uz compinit
+# cache compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit -i -C
+else
+  compinit -i
+fi
+
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit wait lucid atload'_zsh_autosuggest_start' light-mode for \
+  zsh-users/zsh-autosuggestions
 
