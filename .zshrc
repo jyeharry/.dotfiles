@@ -207,6 +207,10 @@ _fzf_compgen_dir() {
   fd --type d . "$1"
 }
 
+function mkcd takedir() {
+  mkdir -p $@ && cd ${@:$#}
+}
+
 
 # -------- KEY BINDS --------
 
