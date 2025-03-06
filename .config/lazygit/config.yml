@@ -6,6 +6,6 @@ customCommands:
       - type: "input"
         title: "Commit"
         initialValue: ""
-    context: "global"
+    context: "files"
     command: git commit -m "{{index .PromptResponses 0}}" --no-verify
     description: "Commit changes without pre-commit hook and prefix"
