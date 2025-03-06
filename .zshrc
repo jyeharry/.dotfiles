@@ -28,6 +28,8 @@ export PATH=$PATH:$HOME/.rbenv/bin
 export PATH="/Users/jye.harry/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 
+export WORDCHARS=''
+
 # fzf's command
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules'"
 # CTRL-T's command
