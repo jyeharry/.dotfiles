@@ -76,7 +76,7 @@ source ~/scripts/fzf-git/fzf-git.sh
 sh ~/tokyonight.nvim/extras/fzf/tokyonight_night.sh
 
 # fnm
-FNM_PATH="/Users/jyeharry/Library/Application Support/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/jyeharry/Library/Application Support/fnm:$PATH"
   _evalcache fnm env --use-on-cd --version-file-strategy=recursive --shell zsh
@@ -121,6 +121,15 @@ zstyle ':fzf-tab:complete:__zoxide:*' fzf-preview 'ls -lahFG --color $realpath'
 
 
 # -------- FUNCTIONS --------
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 _rails_command() {
   if [[ -f ./bin/rails ]]; then
