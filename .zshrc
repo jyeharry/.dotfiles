@@ -50,6 +50,12 @@ export SAVEHIST=10000000
 export HISTORY_IGNORE="(ls|cd|pwd|exit|cd|history).*"
 export HIST_STAMPS="yyyy-mm-dd"
 
+# fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+fi
+
 
 # -------- SOURCES & 3RD PARTY TOOLS --------
 
@@ -74,13 +80,6 @@ source ~/scripts/fzf-git/fzf-git.sh
 
 # theme for fzf
 sh ~/tokyonight.nvim/extras/fzf/tokyonight_night.sh
-
-# fnm
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/jyeharry/Library/Application Support/fnm:$PATH"
-  _evalcache fnm env --use-on-cd --version-file-strategy=recursive --shell zsh
-fi
 
 
 # -------- OPTIONS --------
@@ -279,6 +278,11 @@ alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-completions
+
+# fnm
+if [ -d "$FNM_PATH" ]; then
+  _evalcache fnm env --use-on-cd --version-file-strategy=recursive --shell zsh
+fi
 
 _evalcache fzf --zsh
 _evalcache rbenv init - --rehash zsh
