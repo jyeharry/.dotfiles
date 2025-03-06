@@ -95,6 +95,7 @@ setopt HIST_VERIFY          # Do not execute immediately upon history expansion.
 setopt APPEND_HISTORY       # append to history file (Default)
 setopt HIST_NO_STORE        # Don't store history commands
 setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from each command line being added to the history.
+unsetopt LIST_BEEP
 
 
 # -------- ZINIT --------
