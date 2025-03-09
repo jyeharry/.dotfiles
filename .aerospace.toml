@@ -118,6 +118,10 @@ run = 'move-node-to-workspace 10'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace m'
 
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace m'
+
 [workspace-to-monitor-force-assignment]
 1 = 'secondary'
 2 = 'secondary'
