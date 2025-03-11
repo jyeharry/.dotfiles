@@ -266,8 +266,8 @@ alias gs='git status'
 alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)"
 alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://'"
 alias gweb="open $(gurl)"
-alias main='git checkout main || git checkout master'
-alias dev='git checkout develop || main'
+alias main='git checkout main 2> /dev/null || git checkout master'
+alias dev='git checkout develop 2> /dev/null || main'
 
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
