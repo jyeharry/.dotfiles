@@ -123,15 +123,15 @@ zstyle ':fzf-tab:complete:__zoxide:*' fzf-preview 'ls -lahFG --color $realpath'
 
 
 # -------- FUNCTIONS --------
-
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+#
+# function y() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		builtin cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
 _rails_command() {
   if [[ -f ./bin/rails ]]; then
@@ -251,6 +251,7 @@ alias sb='supabase'
 alias simboot='xcrun simctl boot'
 alias simlist='xcrun simctl list devices | nvim -R'
 alias simshut='xcrun simctl shutdown'
+alias y='yazi'
 alias zshrc='nvim ~/.zshrc && exec zsh'
 
 # git aliases
