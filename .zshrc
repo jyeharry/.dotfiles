@@ -272,6 +272,8 @@ alias dev='git checkout develop 2> /dev/null || main'
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
+alias rtc="rails test:controllers"
+
 
 # -------- LOCAL CONFIGS --------
 
