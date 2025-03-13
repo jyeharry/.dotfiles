@@ -24,6 +24,10 @@ prepend_keymap = [
     "d",
   ], run = "cd ~/Downloads", desc = "Go to ~/Downloads" },
   { on = [
+    "g",
+    "i",
+  ], run = "cd ~/Library/Mobile Documents/com~apple~CloudDocs", desc = "Go to iCloud Drive" },
+  { on = [
     "'",
   ], run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
   { on = [
