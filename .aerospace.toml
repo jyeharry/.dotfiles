@@ -79,11 +79,11 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
+run = ['layout floating', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iBooksX'
-run = 'move-node-to-workspace 2'
+run = ['layout floating', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iphonesimulator'
@@ -99,11 +99,11 @@ run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.dt.Xcode'
-run = 'move-node-to-workspace 8'
+run = ['layout floating', 'move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.google.android.studio'
-run = 'move-node-to-workspace 8'
+run = ['layout floating', 'move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -116,11 +116,19 @@ run = 'move-node-to-workspace 10'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace m'
+run = ['layout floating', 'move-node-to-workspace m']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
-run = 'move-node-to-workspace m'
+run = ['layout floating', 'move-node-to-workspace m']
+
+[[on-window-detected]]
+if.app-id = 'com.rockysandstudio.DeskApp-for-Gmail'
+run = ['layout floating', 'move-node-to-workspace m']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['layout floating', 'move-node-to-workspace m']
 
 [workspace-to-monitor-force-assignment]
 1 = 'secondary'
