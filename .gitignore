@@ -19,6 +19,7 @@
 !.gitignore
 !.ideavimrc
 !.iterm2-profiles.json
+!.keyboard-layout.vil
 !.misc/
 !.misc/*
 !.myzshrc
