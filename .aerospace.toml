@@ -5,10 +5,10 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 start-at-login = true
 
 [mode.main.binding]
-alt-j = 'focus left'
-alt-k = 'focus down'
-alt-l = 'focus up'
-alt-semicolon = 'focus right'
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
 
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
