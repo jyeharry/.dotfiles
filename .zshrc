@@ -28,6 +28,8 @@ export PATH=$PATH:$HOME/.rbenv/bin
 export PATH="/Users/jye.harry/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 
+export MANPAGER='nvim +Man!'
+
 export WORDCHARS=''
 
 # fzf's command
