@@ -120,6 +120,10 @@ if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.iWork.Pages'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.dt.Xcode'
 run = ['layout floating', 'move-node-to-workspace 8']
 

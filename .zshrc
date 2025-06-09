@@ -60,7 +60,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
 fi
 
-
 # -------- SOURCES & 3RD PARTY TOOLS --------
 
 ### Added by Zinit's installer
@@ -246,6 +245,7 @@ alias ...='cd ../..'
 alias ..='cd ..'
 alias .='pwd'
 alias -- -='cd -'
+alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
 alias lg='lazygit'
