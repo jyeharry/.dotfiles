@@ -54,6 +54,11 @@ export SAVEHIST=10000000
 export HISTORY_IGNORE="(ls|cd|pwd|exit|cd|history).*"
 export HIST_STAMPS="yyyy-mm-dd"
 
+export ICLOUD_DIR="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+# Created by `pipx` on 2025-06-13 11:11:01
+export PATH="$PATH:/Users/jyeharry/Library/Python/3.11/bin"
+
 # fnm
 FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -245,7 +250,7 @@ alias ...='cd ../..'
 alias ..='cd ..'
 alias .='pwd'
 alias -- -='cd -'
-alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias icloud="cd '$ICLOUD_DIR'"
 alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
 alias lg='lazygit'
@@ -304,6 +309,8 @@ if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
 else
   compinit -i
 fi
+
+_evalcache register-python-argcomplete pipx
 
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-syntax-highlighting
