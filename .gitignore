@@ -33,4 +33,5 @@
 !.zshrc
 !bin/
 !bin/*
+!brews.txt
 !scripts

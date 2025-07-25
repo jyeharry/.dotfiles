@@ -16,38 +16,7 @@ if ! command -v brew &> /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew install \
-  bat \
-  composer \
-  fd \
-  ffmpeg \
-  fnm \
-  font-hack-nerd-font \
-  fzf \
-  gh \
-  git \
-  go \
-  imagemagick \
-  lazygit \
-  neovim \
-  obsidian \
-  oven-sh/bun/bun \
-  pngpaste \
-  poppler \
-  python3 \
-  rbenv \
-  ripgrep \
-  rlwrap \
-  sd \
-  sevenzip \
-  swift-format \
-  swiftlint \
-  tree \
-  zoxide \
-  zsh-autosuggestions \
-  zsh-syntax-highlighting \
-  && brew install yazi --HEAD \
-  && brew install --cask nikitabobko/tap/aerospace || { echo 'Failed brew-installing something'; exit 1; }
+brew bundle --file ~/brews.txt || { echo 'Failed brew-installing something'; exit 1; }
 
 # download and install Node.js
 if ! command -v node &> /dev/null; then
