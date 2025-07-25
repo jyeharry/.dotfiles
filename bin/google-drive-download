@@ -9,62 +9,73 @@ import io
 from googleapiclient.http import MediaIoBaseDownload
 
 # Configuration
-LOCAL_FOLDER = os.path.expanduser("~/Library/Mobile Documents/com~apple~CloudDocs/job search/2025/cover letters")
+LOCAL_FOLDER = os.path.expanduser(
+    "~/Library/Mobile Documents/com~apple~CloudDocs/job search/2025/cover letters"
+)
 GOOGLE_DRIVE_FOLDER_ID = "18bRbeYrFy5__psF96ZZkzLrmtoZJgzqB"
-SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-TOKEN_FILE = os.path.expanduser('~/.config/google-drive-token.json')
-CREDENTIALS_FILE = os.path.expanduser('~/.config/google-drive-credentials.json')
+SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
+TOKEN_FILE = os.path.expanduser("~/.config/google-drive-token.json")
+CREDENTIALS_FILE = os.path.expanduser("~/.config/google-drive-credentials.json")
+
 
 def get_drive_service():
     creds = None
     if os.path.exists(TOKEN_FILE):
         creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
-    
+
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            try:
+                creds.refresh(Request())  # Try refreshing
+            except Exception:
+                print("Token expired. Re-authenticating...")
+                os.remove(TOKEN_FILE)  # Delete invalid token
+                return get_drive_service()  # Retry
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
-        
+
         os.makedirs(os.path.dirname(TOKEN_FILE), exist_ok=True)
-        with open(TOKEN_FILE, 'w') as token:
+        with open(TOKEN_FILE, "w") as token:
             token.write(creds.to_json())
-    
-    return build('drive', 'v3', credentials=creds)
+
+    return build("drive", "v3", credentials=creds)
+
 
 def get_local_files():
     local_files = set()
     if not os.path.exists(LOCAL_FOLDER):
         return local_files
     for filename in os.listdir(LOCAL_FOLDER):
-        if filename.lower().endswith('.pdf'):
+        if filename.lower().endswith(".pdf"):
             local_files.add(filename.lower())
     return local_files
+
 
 def download_new_files(service, local_files):
     query = f"'{GOOGLE_DRIVE_FOLDER_ID}' in parents and mimeType='application/pdf' and trashed=false"
     results = service.files().list(q=query, fields="files(id,name)").execute()
-    items = results.get('files', [])
-    
+    items = results.get("files", [])
+
     if not items:
         print("No PDF files found in Google Drive folder.")
         return
-    
+
     os.makedirs(LOCAL_FOLDER, exist_ok=True)
-    
+
     for item in items:
-        if item['name'].lower() not in local_files:
+        if item["name"].lower() not in local_files:
             print(f"Downloading {item['name']}...")
-            request = service.files().get_media(fileId=item['id'])
-            file_path = os.path.join(LOCAL_FOLDER, item['name'])
-            fh = io.FileIO(file_path, 'wb')
+            request = service.files().get_media(fileId=item["id"])
+            file_path = os.path.join(LOCAL_FOLDER, item["name"])
+            fh = io.FileIO(file_path, "wb")
             downloader = MediaIoBaseDownload(fh, request)
             done = False
             while not done:
                 status, done = downloader.next_chunk()
                 print(f"Download {int(status.progress() * 100)}%.")
             print(f"Saved to {file_path}")
+
 
 def main():
     try:
@@ -74,5 +85,6 @@ def main():
     except Exception as e:
         print(f"Error: {e}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
