@@ -311,7 +311,9 @@ else
   compinit -i
 fi
 
-_evalcache register-python-argcomplete pipx
+if command -v pipx &> /dev/null; then
+    _evalcache register-python-argcomplete pipx
+fi
 
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-syntax-highlighting
