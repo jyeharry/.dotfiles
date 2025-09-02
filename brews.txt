@@ -1,6 +1,4 @@
 tap "codecrafters-io/tap"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
 tap "houmain/tap"
 tap "jesseduffield/lazygit"
 tap "nikitabobko/tap"
