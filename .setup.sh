@@ -21,7 +21,7 @@ brew bundle --file ~/brews.txt || { echo 'Failed brew-installing something'; exi
 # download and install Node.js
 if ! command -v node &> /dev/null; then
   echo "\nInstalling node"
-  nvm install node || { echo 'Failed nvm installing node'; exit 1; }
+  fnm install node || { echo 'Failed fnm installing node'; exit 1; }
 fi
 
 if [[ -d "/Applications/iTerm.app" ]]; then

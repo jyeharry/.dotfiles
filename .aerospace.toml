@@ -158,14 +158,14 @@ run = ['layout floating', 'move-node-to-workspace m']
 
 [workspace-to-monitor-force-assignment]
 1 = [1, 'secondary']
-2 = [3, 'secondary']
+2 = [1, 'secondary']
 3 = [1, 'secondary']
 4 = [1, 'secondary']
 5 = 'secondary'
 6 = 'main'
 7 = 'main'
 8 = 'main'
-9 = 'main'
+9 = [3, 'main']
 10 = 'main'
 'm' = 'main'
 
