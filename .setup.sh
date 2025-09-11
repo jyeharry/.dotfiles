@@ -7,6 +7,7 @@ if [ ! -d ~/.dotfiles ]; then
   echo "Cloning .dotfiles"
   git clone --bare git@github.com:jyeharry/.dotfiles.git ~/.dotfiles || { echo "Failed cloning .dotfiles"; exit 1 }
   eval "$dotfiles checkout -f || { echo \"Failed checking out .dotfiles\"; exit 1 }"
+  eval "$dotfiles submodule update --init --recursive || { echo \"Failed initialising submodules\"; exit 1 }"
   eval "$dotfiles config --local status.showUntrackedFiles no || { echo 'Failed to set git config'; exit 1; }"
 fi
 
@@ -17,6 +18,10 @@ if ! command -v brew &> /dev/null; then
 fi
 
 brew bundle --file ~/brews.txt || { echo 'Failed brew-installing something'; exit 1; }
+
+if command -v bat &> /dev/null; then
+  bat cache --build
+fi
 
 # download and install Node.js
 if ! command -v node &> /dev/null; then
