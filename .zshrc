@@ -282,6 +282,10 @@ alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
 alias rtc="rails test:controllers"
 
+unalias run-help
+autoload -Uz run-help
+export HELPDIR=/usr/share/zsh/5.9/help/
+
 
 # -------- LOCAL CONFIGS --------
 
@@ -320,4 +324,5 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 zinit wait lucid atload'_zsh_autosuggest_start' light-mode for \
   zsh-users/zsh-autosuggestions
+
 
