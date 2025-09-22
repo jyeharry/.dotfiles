@@ -2,6 +2,7 @@
   path = ~/.local.gitconfig
 [core]
   pager = less -+F -+X
+	logAllRefUpdates = true
 [push]
 	autoSetupRemote = true
 	followTags = true
@@ -35,3 +36,5 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[gc]
+	reflogExpire = never

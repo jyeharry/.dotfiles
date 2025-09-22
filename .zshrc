@@ -260,7 +260,8 @@ alias sb='supabase'
 alias simboot='xcrun simctl boot'
 alias simlist='xcrun simctl list devices | nvim -R'
 alias simshut='xcrun simctl shutdown'
-alias zshrc='nvim ~/.zshrc && exec zsh'
+alias zrc='nvim ~/.zshrc && exec zsh'
+alias lzrc='nvim ~/.local.zshrc && exec zsh'
 
 # git aliases
 alias df="dotfiles"
