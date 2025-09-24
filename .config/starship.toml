@@ -2,6 +2,7 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$git_state\
 $nodejs\
 $ruby\
 $rust\
@@ -29,6 +30,9 @@ format = '[$symbol ($version )]($style)'
 [git_branch]
 symbol = ""
 format = '[$symbol $branch(:$remote_branch)]($style) '
+
+[git_state]
+format = '[$state( $progress_current/$progress_total)]($style) '
 
 [git_status]
 style = 'bold purple'

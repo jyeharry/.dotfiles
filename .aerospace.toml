@@ -18,8 +18,6 @@ alt-shift-l = 'move right'
 alt-minus = 'split horizontal'
 alt-backslash = 'split vertical'
 
-alt-f = 'fullscreen'
-
 alt-a = 'layout v_accordion'               # 'layout stacking' in i3
 alt-s = 'layout h_accordion'               # 'layout tabbed' in i3
 alt-d = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
