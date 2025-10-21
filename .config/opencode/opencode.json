@@ -19,6 +19,15 @@
         "chrome-devtools-mcp@latest"
       ],
       "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "enabled": true
     }
   }
 }

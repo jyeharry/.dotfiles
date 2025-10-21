@@ -236,6 +236,14 @@ function mkcd takedir() {
 bindkey '^h' fzf-man-widget
 zle -N fzf-man-widget
 
+# command prefix search with ctrl-p and ctrl-n
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^p' up-line-or-beginning-search
+bindkey '^n' down-line-or-beginning-search
 
 # -------- ALIASES & COMMANDS --------
 
