@@ -276,15 +276,14 @@ alias df="dotfiles"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
-alias gfh='git log --pretty=format:"%C(auto)%H %an %ad, (%ar)" --date=format-local:%d/%m/%Y --name-status'
-alias grget='git remote get-url --all'
+alias grget='git remote get-url --all' # get url for remote
 alias gs='git status'
-# show changes from develop to current branch
-alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)"
-alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://' | pbcopy"
+alias gshbr="git show develop..$(git_current_branch) 2>/dev/null git show main..$(git_current_branch)" # show changes from develop to current branch
+alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://' | pbcopy" # copy http url for current branch
 alias gweb="open $(gurl)"
 alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
+alias grsp='git restore --patch'
 
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
