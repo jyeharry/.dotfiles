@@ -28,6 +28,11 @@
         "--headless"
       ],
       "enabled": true
+    },
+    "grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
     }
   }
 }
