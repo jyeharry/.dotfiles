@@ -284,6 +284,8 @@ alias gweb="open $(gurl)"
 alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
 alias grsp='git restore --patch'
+alias ghpc='gh pr create'
+alias ghpv='gh pr view --web'
 
 alias nvd="cd $NVD"
 alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
