@@ -27,13 +27,12 @@
 !.myzshrc
 !.rectangle-config.json
 !.setup.sh
-!.zsh.d/
-!.zsh.d/*
+!.zsh/
+!.zsh/*
 !.zshrc
 !bin/
 !bin/*
 !brews.txt
 !scripts
-# .config/*
 .config/lazygit/*
 .dotfiles
