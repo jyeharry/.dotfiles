@@ -3,12 +3,13 @@
 !.config/
 !.config/bat/
 !.config/bat/**/*
+!.config/git/
+!.config/git/**/*
 !.config/karabiner/
 !.config/karabiner/assets/
 !.config/karabiner/assets/**/*
 !.config/karabiner/karabiner.json
 !.config/lazygit/
-!.config/lazygit/config.yml
 !.config/lazygit/config.yml
 !.config/opencode
 !.config/opencode/**/*
@@ -33,6 +34,6 @@
 !bin/*
 !brews.txt
 !scripts
-.config/*
+# .config/*
 .config/lazygit/*
 .dotfiles
