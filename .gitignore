@@ -32,6 +32,7 @@
 !.zshrc
 !bin/
 !bin/*
+!arch-core-packages.txt
 !brews.txt
 !scripts
 .config/lazygit/*
