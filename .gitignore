@@ -26,7 +26,8 @@
 !.misc/*
 !.myzshrc
 !.rectangle-config.json
-!.setup.sh
+!setup/
+!setup/*
 !.zsh/
 !.zsh/*
 !.zshrc
