@@ -1,3 +1,5 @@
+bitwarden
+omarchy-zsh
 sd
 zsh-autosuggestions
 zsh-completions
