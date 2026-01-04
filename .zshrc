@@ -121,10 +121,15 @@ zinit snippet OMZP::rails
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::key-bindings.zsh
 
+# Typing lowercase matches both lowercase AND uppercase.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# Uses $LS_COLORS variable for file colors.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Shows completions as a simple list instead of a selectable menu.
 zstyle ':completion:*' menu no
+# When completing cd commands, shows a preview with ls of the directory.
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -lahFG --color $realpath'
+# Shows directory previews for z (zoxide) commands.
 zstyle ':fzf-tab:complete:__zoxide:*' fzf-preview 'ls -lahFG --color $realpath'
 
 
