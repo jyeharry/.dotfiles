@@ -38,12 +38,6 @@
 !.config/mise/**/*
 !.config/opencode
 !.config/opencode/**/*
-!.config/pulse/
-!.config/pulse/*
-!.config/pulse/**/*
-!.config/qalculate/
-!.config/qalculate/*
-!.config/qalculate/**/*
 !.config/starship.toml
 !.config/swayosd/
 !.config/swayosd/*
