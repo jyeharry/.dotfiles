@@ -17,7 +17,9 @@ alias icloud="cd '$ICLOUD_DIR'"
 alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
 alias lg='lazygit'
-unalias ls
+if alias -v ls &> /dev/null; then
+  unalias ls
+fi
 if command -v eza &> /dev/null; then
   alias ll='eza -lha --group-directories-first --icons=auto'
 else

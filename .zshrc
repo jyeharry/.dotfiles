@@ -17,10 +17,13 @@ if [[ -d /usr/share/omarchy-zsh/functions ]]; then
   done
 fi
 
-source ~/.dotfiles/.zsh/envs.zsh
-source ~/.dotfiles/.zsh/sources.zsh
-source ~/.dotfiles/.zsh/opts.zsh
-source ~/.dotfiles/.zsh/funcs.zsh
-source ~/.dotfiles/.zsh/binds.zsh
-source ~/.dotfiles/.zsh/aliases.zsh
-source ~/.dotfiles/.zsh/last.zsh
+source ~/.zsh/envs.zsh
+source ~/.zsh/sources.zsh
+source ~/.zsh/opts.zsh
+source ~/.zsh/funcs.zsh
+source ~/.zsh/binds.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/last.zsh
+if [[ ! -d /usr/share/omarchy-zsh/conf.d ]]; then
+  source ~/.zsh/mac.zsh
+fi

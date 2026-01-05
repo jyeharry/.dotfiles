@@ -2,7 +2,7 @@ export EDITOR='nvim'
 export SUDO_EDITOR="$EDITOR"
 
 export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
-export LG_CONFIG_FILE="$HOME/.dotfiles/tokyonight.nvim/extras/lazygit/tokyonight_night.yml,$HOME/.config/lazygit/config.yml"
+export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml,$HOME/.config/lazygit/config.yml"
 
 # nvim
 export NVD="$HOME/.config/nvim/"
