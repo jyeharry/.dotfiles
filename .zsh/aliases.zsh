@@ -40,10 +40,10 @@ alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
 alias grget='git remote get-url --all' # get url for remote
 alias gs='git status'
-if command -v pbcopy &> /dev/null; then
-  alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://' | pbcopy" # copy http url for current branch
-  alias gweb="open $(gurl)"
-fi
+# if command -v pbcopy &> /dev/null; then
+#   alias gurl="git config --get remote.origin.url | sd ':' '/' | sd 'git@' 'https://' | pbcopy" # copy http url for current branch
+#   alias gweb="open $(gurl)"
+# fi
 alias main='git checkout main || git checkout master'
 alias dev='git checkout develop || main'
 alias grsp='git restore --patch'
