@@ -56,9 +56,6 @@
 !.config/ghostty/**/*
 !.config/git/
 !.config/git/**/*
-!.config/github-copilot/
-!.config/github-copilot/*
-!.config/github-copilot/**/*
 !.config/go/
 !.config/go/*
 !.config/go/**/*
