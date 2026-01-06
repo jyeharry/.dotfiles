@@ -54,13 +54,13 @@ _evalcache fzf --zsh
 _evalcache zoxide init zsh
 _evalcache starship init zsh
 
-autoload -Uz compinit
-# cache compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit -i -C
-else
-  compinit -i
-fi
+# autoload -Uz compinit
+# # cache compinit
+# if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+#   compinit -i -C
+# else
+#   compinit -i
+# fi
 
 if command -v pipx &> /dev/null; then
     _evalcache register-python-argcomplete pipx
