@@ -51,8 +51,6 @@
 !.config/yay/
 !.config/yay/*
 !.config/yay/**/*
-!.config/yazi
-!.config/yazi/**/*
 
 .config/lazygit/*
 
