@@ -65,14 +65,6 @@ check-further-callbacks = true
 run = [ 'layout floating' ]
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 1'
 
@@ -87,7 +79,7 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 if.during-aerospace-startup = true
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iBooksX'
@@ -100,6 +92,18 @@ run = 'move-node-to-workspace 3'
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
@@ -127,13 +131,13 @@ if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace 10'
 
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = [1, 'secondary']
-3 = [1, 'secondary']
+1 = [1, 'secondary', 'main']
+2 = [1, 'secondary', 'main']
+3 = [1, 'secondary', 'main']
 4 = [1, 'secondary']
-5 = 'secondary'
+5 = ['secondary', 'main']
 6 = 'main'
 7 = 'main'
-8 = 'main'
+8 = [3, 'main']
 9 = [3, 'main']
 10 = [3, 'main']
