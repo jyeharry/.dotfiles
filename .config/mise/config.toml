@@ -1,7 +1,8 @@
 [tools]
 bun = "latest"
 go = "latest"
-node = "25.2.1"
+node = "latest"
+python = "latest"
 ruby = "latest"
 
 [settings]

@@ -23,13 +23,9 @@ if command -v bat &> /dev/null; then
   bat cache --build
 fi
 
-# download and install Node.js
-if ! command -v node &> /dev/null; then
-  echo "\nInstalling node"
-  fnm install node || { echo 'Failed fnm installing node'; exit 1; }
-fi
+mise install
 
-if [[ -d "/Applications/iTerm.app" ]]; then
+if [[ ! -d ~/Applications/iTerm.app ]]; then
   echo "\nInstalling iTerm2"
   curl -L https://iterm2.com/downloads/stable/latest --output ~/Downloads/iTerm.zip || { echo 'Failed downloading iTerm2 with curl'; exit 1; }
   unzip ~/Downloads/iTerm.zip -d ~/Applications/ || { echo 'Failed unzipping and installing iTerm2'; exit 1; }

@@ -10,7 +10,6 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-
 zinit lucid for \
   Aloxaf/fzf-tab \
   OMZL::key-bindings.zsh \
@@ -25,3 +24,5 @@ zinit wait lucid light-mode for \
   zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
   zsh-users/zsh-completions
+
+eval "$(mise activate zsh)"
