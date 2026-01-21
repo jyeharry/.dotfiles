@@ -94,7 +94,7 @@ if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-if.app-id = 'com.postmanlabs.mac'
+if.app-id = 'io.hoppscotch.desktop'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
