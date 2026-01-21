@@ -2,6 +2,7 @@
 bun = "latest"
 go = "latest"
 node = "latest"
+"pipx:sqlit-tui" = "latest"
 python = "latest"
 ruby = "latest"
 
