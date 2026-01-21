@@ -35,3 +35,25 @@ _fzf_compgen_dir() {
 function mkcd takedir() {
   mkdir -p $@ && cd ${@:$#}
 }
+
+fzf-variables-widget() {
+  local current_token="${LBUFFER##* }"
+  local cleaned_token="${current_token#\$}"
+
+  local selected
+  selected=$(typeset -p | awk '{print $1, $2}' | sort -u | awk '{print $2}' | \
+    fzf --multi --prompt="Variables> " --preview-window=wrap \
+      --preview='echo {} && typeset -p {} 2>/dev/null || echo "No details available"' \
+      --query="$cleaned_token")
+
+  if [[ -n "$selected" ]]; then
+    # If current token starts with $, keep the $
+    if [[ "$current_token" == \$* ]]; then
+      selected="\$${selected}"
+    fi
+    # Replace the current token
+    LBUFFER="${LBUFFER%$current_token}${selected} "
+  fi
+  zle reset-prompt
+}
+zle -N fzf-variables-widget
