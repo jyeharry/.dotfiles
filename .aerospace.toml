@@ -89,16 +89,16 @@ if.app-id = 'com.apple.iBooksX'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.iphonesimulator'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
-if.app-id = 'io.hoppscotch.desktop'
-run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'

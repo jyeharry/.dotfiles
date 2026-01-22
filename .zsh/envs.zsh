@@ -8,8 +8,10 @@ export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml
 export NVD="$HOME/.config/nvim/"
 export NVIMRC="$NVD/init.lua"
 
-export PATH=$PATH:$HOME/.local/bin/
-export PATH=$PATH:$HOME/bin/
+export PATH=$PATH:$HOME/.local/bin/:$HOME/bin/
+
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 export MANPAGER='nvim +Man!'
 
