@@ -75,3 +75,4 @@
 !setup/
 !setup/*
 .dotfiles
+.zsh/local.zsh

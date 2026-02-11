@@ -24,6 +24,7 @@ source ~/.zsh/funcs.zsh
 source ~/.zsh/binds.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/last.zsh
+[[ -f ~/.zsh/local.zsh ]] && source ~/.zsh/local.zsh
 if [[ ! -d /usr/share/omarchy-zsh/conf.d ]]; then
   source ~/.zsh/mac.zsh
 fi
