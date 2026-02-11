@@ -16,6 +16,7 @@ alias -- -='cd -'
 alias icloud="cd '$ICLOUD_DIR'"
 alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
+alias ld='lazydocker'
 alias lg='lazygit'
 if alias -v ls &> /dev/null; then
   unalias ls
