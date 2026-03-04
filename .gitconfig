@@ -3,6 +3,7 @@
 [core]
   pager = less -+F -+X
 	logAllRefUpdates = true
+  excludesFile = ~/.gitignore-global
 [push]
 	autoSetupRemote = true
 	followTags = true
