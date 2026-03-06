@@ -57,3 +57,13 @@ fzf-variables-widget() {
   zle reset-prompt
 }
 zle -N fzf-variables-widget
+
+dotfiles() {
+  if [[ $# -eq 0 ]]; then
+    lazygit "${DOTFILES_BASE_ARGS[@]}"
+  else
+    /usr/bin/git "${DOTFILES_BASE_ARGS[@]}" "$@"
+  fi
+}
+
+

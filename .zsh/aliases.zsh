@@ -18,7 +18,6 @@ alias alrg='print -z -- $(alias | fzf | sd "=.*$" "")'
 alias cht='cht.sh'
 alias ld='lazydocker'
 alias lg='lazygit'
-alias dflg='lazygit -w ~ -g ~/.dotfiles'
 if alias -v ls &> /dev/null; then
   unalias ls
 fi
@@ -37,7 +36,6 @@ alias lzrc='nvim ~/.local.zshrc && exec zsh'
 
 # git aliases
 alias df="dotfiles"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
 alias grget='git remote get-url --all' # get url for remote
