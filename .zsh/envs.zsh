@@ -1,6 +1,8 @@
 export EDITOR='nvim'
 export SUDO_EDITOR="$EDITOR"
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
 export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml,$HOME/.config/lazygit/config.yml"
 
@@ -8,12 +10,14 @@ export LG_CONFIG_FILE="$HOME/tokyonight.nvim/extras/lazygit/tokyonight_night.yml
 export NVD="$HOME/.config/nvim/"
 export NVIMRC="$NVD/init.lua"
 
-export PATH=$PATH:$HOME/.local/bin/:$HOME/bin/
-
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
 
 export MANPAGER='nvim +Man!'
+
+export PATH=$PATH:$HOME/.local/bin/:$HOME/bin/
+export PATH="$PNPM_HOME:$PATH"
+export PATH="/usr/locale/opt/postgresql@18/bin:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # export WORDCHARS=''
 
