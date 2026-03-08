@@ -48,11 +48,15 @@
 !.config/waybar/
 !.config/waybar/*
 !.config/waybar/**/*
+!.config/weechat/
+!.config/weechat/*
 !.config/yay/
 !.config/yay/*
 !.config/yay/**/*
 
-.config/lazygit/*
+.config/weechat/relay.conf
+.config/weechat/sec.conf
+
 
 !.gitconfig
 !.gitignore
