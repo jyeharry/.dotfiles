@@ -1,14 +1,21 @@
 layout {
-  pane size=1 borderless=true {
-    plugin location="tab-bar"
+  default_tab_template {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=1 borderless=true {
+        plugin location="zellij:status-bar"
+    }
   }
-  pane stacked=true {
-    pane expanded=true command="nvim"
+  tab name="nvim" {
+    pane command="nvim"
+  }
+  tab name="lazygit" {
     pane command="lazygit"
-    pane
-    pane
   }
-  pane size=1 borderless=true {
-    plugin location="status-bar"
+  tab name="Run" {
+    pane
+    pane
   }
 }
