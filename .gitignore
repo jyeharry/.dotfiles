@@ -1,7 +1,8 @@
 *
-!.aerospace.toml
 
 !.config/
+!.config/aerospace/
+!.config/aerospace/aerospace.toml
 !.config/alacritty/
 !.config/alacritty/*
 !.config/alacritty/**/*
