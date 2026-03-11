@@ -54,6 +54,9 @@
 !.config/yay/
 !.config/yay/*
 !.config/yay/**/*
+!.config/zellij/
+!.config/zellij/*
+!.config/zellij/**/*
 
 .config/weechat/relay.conf
 .config/weechat/sec.conf
