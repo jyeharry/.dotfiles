@@ -26,4 +26,4 @@ zinit wait lucid light-mode for \
   zsh-users/zsh-completions
 
 eval "$(mise activate zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
