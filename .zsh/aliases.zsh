@@ -57,5 +57,8 @@ alias nvimrc="cd $NVD && nvim $NVIMRC && cd -"
 
 alias rtc="rails test:controllers"
 
+alias zutils="zellij --layout utils"
+alias zproj="zellij --layout project"
+
 unalias run-help
 autoload -Uz run-help
