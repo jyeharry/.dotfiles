@@ -22,7 +22,7 @@ if alias -v ls &> /dev/null; then
   unalias ls
 fi
 if command -v eza &> /dev/null; then
-  alias ll='eza --all --long --header --group --links --reverse --icons=auto --no-quotes --group-directories-first'
+  alias ll='eza --all --long --header --group --links --icons=auto --no-quotes --group-directories-first'
   alias lldw='eza --all --long --header --group --links --reverse --icons=auto --no-quotes --sort=created --created $HOME/Downloads/'
 else
   alias ll='ls -lahFG'
