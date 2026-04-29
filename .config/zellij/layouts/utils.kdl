@@ -1,23 +1,35 @@
 layout {
-  pane size=1 borderless=true {
-    plugin location="tab-bar"
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:status-bar"
+    }
   }
-  pane stacked=true {
+  tab name="utils" {
+    pane stacked=true {
+      pane command="nvim" {
+        name "Notes"
+        cwd "~/second-brain/"
+        expanded true
+      }
+      pane command="btop" {
+        cwd "~"
+        start_suspended true
+      }
+      pane {
+        name "Dotfiles"
+        cwd "~"
+      }
+    }
+  }
+  tab name="config" {
     pane command="nvim" {
-      name "Notes"
-      cwd "~/second-brain/"
-      expanded true
+      name "nvim"
+      cwd "~/.config/"
+      args "."
     }
-    pane command="btop" {
-       cwd "~"
-       start_suspended true
-    }
-    pane {
-      name "Dotfiles"
-      cwd "~"
-    }
-  }
-  pane size=1 borderless=true {
-    plugin location="status-bar"
   }
 }
