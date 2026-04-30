@@ -4,6 +4,7 @@ go = "latest"
 node = "latest"
 "npm:tree-sitter-cli" = "latest"
 "pipx:sqlit-tui" = "latest"
+pnpm = "latest"
 python = "latest"
 ruby = "latest"
 
