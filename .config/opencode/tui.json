@@ -2,6 +2,10 @@
   "$schema": "https://opencode.ai/tui.json",
   "theme": "tokyonight",
   "keybinds": {
-    "command_list": "ctrl+p,<leader>p"
+    "command_list": "ctrl+p,<leader>p",
+    "messages_line_up": "ctrl+shift+k,shift+up",
+    "messages_line_down": "ctrl+shift+j,shift+down",
+    "messages_next": "ctrl+j,ctrl+down,shift+right",
+    "messages_previous": "ctrl+k,ctrl+up,shift+left"
   }
 }

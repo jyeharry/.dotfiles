@@ -37,6 +37,20 @@
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp",
       "enabled": true
+    },
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp",
+      "enabled": true,
+      "oauth": {
+        "clientId": "{env:FIGMA_OAUTH_CLIENT_ID}",
+        "clientSecret": "{env:FIGMA_OAUTH_CLIENT_SECRET}"
+      }
+    },
+    "datadog": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp",
+      "enabled": true
     }
   }
 }
