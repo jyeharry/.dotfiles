@@ -19,17 +19,34 @@ layout {
         cwd "~"
         start_suspended true
       }
+    }
+  }
+  tab name=".config" {
+    pane stacked=true {
+      pane command="nvim" {
+        name "nvim"
+        cwd "~/.config/"
+        args "."
+        expanded true
+      }
       pane {
         name "Dotfiles"
         cwd "~"
       }
     }
   }
-  tab name="config" {
-    pane command="nvim" {
-      name "nvim"
-      cwd "~/.config/"
-      args "."
+  tab name="neovim config" {
+    pane stacked=true {
+      pane command="nvim" {
+        name "nvim"
+        cwd "~/.config/nvim"
+        args "."
+        expanded true
+      }
+      pane command="lazygit" {
+        name "lazygit"
+        cwd "~/.config/nvim"
+      }
     }
   }
 }
