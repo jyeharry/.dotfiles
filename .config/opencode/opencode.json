@@ -51,6 +51,20 @@
       "type": "remote",
       "url": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp",
       "enabled": true
+    },
+    "vercel": {
+      "type": "remote",
+      "url": "https://mcp.vercel.com",
+      "enabled": true
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_MCP_CLASSIC_PAT}",
+        "X-MCP-Toolsets": "default,actions"
+      },
+      "enabled": true
     }
   }
 }
