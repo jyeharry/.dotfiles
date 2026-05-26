@@ -11,9 +11,13 @@ layout {
   tab name="utils" {
     pane stacked=true {
       pane command="nvim" {
-        name "Notes"
+        name "notes"
         cwd "~/second-brain/"
         expanded true
+      }
+      pane command="lazygit" {
+        name "lazygit"
+        cwd "~/second-brain/"
       }
       pane command="btop" {
         cwd "~"

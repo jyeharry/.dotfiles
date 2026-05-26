@@ -14,7 +14,7 @@ layout {
   tab name="lazygit" {
     pane command="lazygit"
   }
-  tab name="Run" {
+  tab name="run" {
     pane
     pane
   }
