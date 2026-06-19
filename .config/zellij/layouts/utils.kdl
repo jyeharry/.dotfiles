@@ -30,7 +30,6 @@ layout {
       pane command="nvim" {
         name "nvim"
         cwd "~/.config/"
-        args "."
         expanded true
       }
       pane {
@@ -44,7 +43,6 @@ layout {
       pane command="nvim" {
         name "nvim"
         cwd "~/.config/nvim"
-        args "."
         expanded true
       }
       pane command="lazygit" {
