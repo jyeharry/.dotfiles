@@ -65,6 +65,14 @@
         "X-MCP-Toolsets": "default,actions"
       },
       "enabled": true
+    },
+    "homebrew": {
+      "type": "local",
+      "command": [
+        "brew",
+        "mcp-server"
+      ],
+      "enabled": true
     }
   }
 }
