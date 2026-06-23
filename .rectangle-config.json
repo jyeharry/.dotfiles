@@ -1,6 +1,9 @@
 {
   "bundleId" : "com.knollsoft.Rectangle",
   "defaults" : {
+    "SUEnableAutomaticChecks" : {
+      "bool" : false
+    },
     "allowAnyShortcut" : {
       "bool" : true
     },
@@ -10,11 +13,11 @@
     "almostMaximizeWidth" : {
       "float" : 0
     },
-    "alternateDefaultShortcuts" : {
-      "bool" : true
-    },
     "altThirdCycle" : {
       "int" : 0
+    },
+    "alternateDefaultShortcuts" : {
+      "bool" : true
     },
     "alwaysAccountForStage" : {
       "int" : 0
@@ -34,10 +37,10 @@
     "cascadeAllDeltaSize" : {
       "float" : 30
     },
-    "centeredDirectionalMove" : {
+    "centerHalfCycles" : {
       "int" : 0
     },
-    "centerHalfCycles" : {
+    "centeredDirectionalMove" : {
       "int" : 0
     },
     "cornerSnapAreaSize" : {
@@ -151,14 +154,17 @@
     "screenEdgeGapRight" : {
       "float" : 0
     },
-    "screenEdgeGapsOnMainScreenOnly" : {
-      "bool" : false
-    },
     "screenEdgeGapTop" : {
       "float" : 0
     },
     "screenEdgeGapTopNotch" : {
       "float" : 0
+    },
+    "screenEdgeGapsOnMainScreenOnly" : {
+      "bool" : false
+    },
+    "screensOrderedByX" : {
+      "int" : 0
     },
     "selectedCycleSizes" : {
       "int" : 0
@@ -201,9 +207,6 @@
     },
     "subsequentExecutionMode" : {
       "int" : 0
-    },
-    "SUEnableAutomaticChecks" : {
-      "bool" : false
     },
     "systemWideMouseDown" : {
       "int" : 0
@@ -253,8 +256,8 @@
       "keyCode" : 8,
       "modifierFlags" : 786432
     },
-    "centerThird" : {
-      "keyCode" : 3,
+    "centerTwoThirds" : {
+      "keyCode" : 15,
       "modifierFlags" : 786432
     },
     "firstThird" : {
@@ -330,5 +333,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "88"
+  "version" : "96"
 }
