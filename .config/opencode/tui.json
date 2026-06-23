@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "tokyonight",
+  "theme": "tokyonight_moon",
   "keybinds": {
     "command_list": "ctrl+p,<leader>p",
     "messages_line_up": "ctrl+shift+k,shift+up",

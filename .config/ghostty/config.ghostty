@@ -1,10 +1,11 @@
 # Dynamic theme colors
-config-file = ?"~/tokyonight.nvim/extras/ghostty/tokyonight_night"
+config-file = ?"~/tokyonight.nvim/extras/ghostty/tokyonight_moon"
 
 # Font
 font-family = "JetBrainsMono Nerd Font"
 font-style = Regular
 font-size = 16
+font-feature = -calt
 
 # Window
 window-theme = ghostty
