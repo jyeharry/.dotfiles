@@ -126,6 +126,10 @@ if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace 10'
 
 [[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 10'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.dt.Xcode'
 run = 'move-node-to-workspace 10'
 

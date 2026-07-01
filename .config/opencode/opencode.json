@@ -49,7 +49,7 @@
     },
     "datadog": {
       "type": "remote",
-      "url": "https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp",
+      "url": "https://mcp.datadoghq.eu/v1/mcp?toolsets=core,alerting,dashboards,ddsql,rum&omit_tools=edit_datadog_notebook,create_datadog_notebook,create_datadog_monitor,upsert_datadog_dashboard,delete_datadog_dashboard,validate_dashboard_widget",
       "enabled": true
     },
     "vercel": {
