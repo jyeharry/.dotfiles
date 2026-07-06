@@ -39,6 +39,7 @@
 !.config/mise/**/*
 !.config/opencode
 !.config/opencode/**/*
+!.config/ripgreprc
 !.config/starship.toml
 !.config/swayosd/
 !.config/swayosd/*

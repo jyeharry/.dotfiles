@@ -46,4 +46,6 @@ export HIST_STAMPS="yyyy-mm-dd"
 
 export HELPDIR=/usr/share/zsh/5.9/help/
 
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgreprc"
+
 export DOTFILES_BASE_ARGS=(--git-dir="$HOME/.dotfiles" --work-tree="$HOME")
