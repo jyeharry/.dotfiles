@@ -138,13 +138,13 @@ if.app-id = 'com.google.android.studio'
 run = 'move-node-to-workspace 10'
 
 [workspace-to-monitor-force-assignment]
-1 = [1, 'secondary', 'main']
-2 = [1, 'secondary', 'main']
-3 = [1, 'secondary', 'main']
-4 = [2, 'secondary']
+1 = ['DELL P2417H', 1, 'secondary', 'main']
+2 = ['DELL P2417H', 1, 'secondary', 'main']
+3 = ['DELL P2417H', 1, 'secondary', 'main']
+4 = ['Built-in Retina Display', 2, 'secondary']
 5 = ['secondary', 'main']
 6 = 'main'
 7 = 'main'
-8 = [3, 'main']
-9 = [3, 'main']
-10 = [3, 'main']
+8 = ['VA2419 Series', 3, 'main']
+9 = ['VA2419 Series', 3, 'main']
+10 = ['VA2419 Series', 3, 'main']
