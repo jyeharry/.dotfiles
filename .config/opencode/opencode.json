@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": "notify",
+  "autoupdate": true,
   "mcp": {
     "context7": {
       "type": "local",
@@ -36,12 +36,12 @@
     "atlassian": {
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp",
-      "enabled": true
+      "enabled": false
     },
     "figma": {
       "type": "remote",
       "url": "https://mcp.figma.com/mcp",
-      "enabled": true,
+      "enabled": false,
       "oauth": {
         "clientId": "{env:FIGMA_OAUTH_CLIENT_ID}",
         "clientSecret": "{env:FIGMA_OAUTH_CLIENT_SECRET}"
@@ -50,12 +50,12 @@
     "datadog": {
       "type": "remote",
       "url": "https://mcp.datadoghq.eu/v1/mcp?toolsets=core,alerting,dashboards,ddsql,rum&omit_tools=edit_datadog_notebook,create_datadog_notebook,create_datadog_monitor,upsert_datadog_dashboard,delete_datadog_dashboard,validate_dashboard_widget",
-      "enabled": true
+      "enabled": false
     },
     "vercel": {
       "type": "remote",
       "url": "https://mcp.vercel.com",
-      "enabled": true
+      "enabled": false
     },
     "github": {
       "type": "remote",
@@ -64,7 +64,7 @@
         "Authorization": "Bearer {env:GITHUB_MCP_CLASSIC_PAT}",
         "X-MCP-Toolsets": "default,actions"
       },
-      "enabled": true
+      "enabled": false
     },
     "homebrew": {
       "type": "local",
@@ -73,6 +73,25 @@
         "mcp-server"
       ],
       "enabled": true
+    },
+    "tinyfish": {
+      "type": "remote",
+      "url": "https://agent.tinyfish.ai/mcp?source=tinyfish_cli&client=opencode&connect_attempt_id=56d8bca1-d0dc-4232-8635-2116479ebfb0",
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+    },
+    "firecrawl": {
+      "type": "remote",
+      "url": "https://mcp.firecrawl.dev/v2/mcp-oauth"
+    },
+    "tavily": {
+      "type": "remote",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={env:TAVILY_API_KEY}"
     }
+  },
+  "websearch": {
+    "provider": "random",
   }
 }

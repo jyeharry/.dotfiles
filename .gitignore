@@ -59,6 +59,7 @@
 !.config/zellij/*
 !.config/zellij/**/*
 
+.config/opencode/service.json
 .config/weechat/relay.conf
 .config/weechat/sec.conf
 

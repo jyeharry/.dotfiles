@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "tokyonight_moon"
+  },
+  "keybinds": {
+    "app.exit": "ctrl+c,<leader>q",
+    "command.palette.show": "ctrl+p,<leader>p",
+    "session.line.up": "",
+    "session.line.down": "",
+    "session.message.next": "",
+    "session.message.previous": ""
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "hide"
+  },
+  "animations": true,
+  "tabs": {
+    "mode": "auto"
+  }
+}
