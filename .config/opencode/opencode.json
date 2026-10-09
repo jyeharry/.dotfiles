@@ -73,22 +73,6 @@
         "mcp-server"
       ],
       "enabled": true
-    },
-    "tinyfish": {
-      "type": "remote",
-      "url": "https://agent.tinyfish.ai/mcp?source=tinyfish_cli&client=opencode&connect_attempt_id=56d8bca1-d0dc-4232-8635-2116479ebfb0",
-    },
-    "exa": {
-      "type": "remote",
-      "url": "https://mcp.exa.ai/mcp",
-    },
-    "firecrawl": {
-      "type": "remote",
-      "url": "https://mcp.firecrawl.dev/v2/mcp-oauth"
-    },
-    "tavily": {
-      "type": "remote",
-      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={env:TAVILY_API_KEY}"
     }
   },
   "websearch": {
