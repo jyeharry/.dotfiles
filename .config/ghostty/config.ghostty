@@ -50,3 +50,5 @@ gtk-wide-tabs = false
 macos-option-as-alt = true
 
 mouse-hide-while-typing = true
+
+window-new-tab-position = end
