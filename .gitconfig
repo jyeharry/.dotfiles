@@ -18,6 +18,9 @@
 	colorMoved = plain
 	renames = true
 	mnemonicPrefix = true
+  tool = nvimdiff
+[difftool]
+  prompt = false
 [fetch]
 	prune = true
 	pruneTags = true
