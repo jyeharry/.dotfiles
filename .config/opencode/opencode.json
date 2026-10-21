@@ -2,78 +2,80 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
   "mcp": {
-    "context7": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@upstash/context7-mcp"
-      ],
-      "enabled": true
-    },
-    "chrome-devtools": {
-      "type": "local",
-      "command": [
-        "npx",
-        "chrome-devtools-mcp@latest"
-      ],
-      "enabled": true
-    },
-    "playwright": {
-      "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest",
-        "--headless"
-      ],
-      "enabled": true
-    },
-    "grep": {
-      "type": "remote",
-      "url": "https://mcp.grep.app",
-      "enabled": true
-    },
-    "atlassian": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp",
-      "enabled": false
-    },
-    "figma": {
-      "type": "remote",
-      "url": "https://mcp.figma.com/mcp",
-      "enabled": false,
-      "oauth": {
-        "clientId": "{env:FIGMA_OAUTH_CLIENT_ID}",
-        "clientSecret": "{env:FIGMA_OAUTH_CLIENT_SECRET}"
+    "servers": {
+      "context7": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "@upstash/context7-mcp"
+        ],
+        "disabled": false
+      },
+      "chrome-devtools": {
+        "type": "local",
+        "command": [
+          "npx",
+          "chrome-devtools-mcp@latest"
+        ],
+        "disabled": false
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "npx",
+          "@playwright/mcp@latest",
+          "--headless"
+        ],
+        "disabled": false
+      },
+      "grep": {
+        "type": "remote",
+        "url": "https://mcp.grep.app",
+        "disabled": false
+      },
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v1/mcp",
+        "disabled": true
+      },
+      "figma": {
+        "type": "remote",
+        "url": "https://mcp.figma.com/mcp",
+        "disabled": true,
+        "oauth": {
+          "clientId": "{env:FIGMA_OAUTH_CLIENT_ID}",
+          "clientSecret": "{env:FIGMA_OAUTH_CLIENT_SECRET}"
+        }
+      },
+      "datadog": {
+        "type": "remote",
+        "url": "https://mcp.datadoghq.eu/v1/mcp?toolsets=core,alerting,dashboards,ddsql,rum&omit_tools=edit_datadog_notebook,create_datadog_notebook,create_datadog_monitor,upsert_datadog_dashboard,delete_datadog_dashboard,validate_dashboard_widget",
+        "disabled": true
+      },
+      "vercel": {
+        "type": "remote",
+        "url": "https://mcp.vercel.com",
+        "disabled": true
+      },
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp",
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_MCP_CLASSIC_PAT}",
+          "X-MCP-Toolsets": "default,actions"
+        },
+        "disabled": true
+      },
+      "homebrew": {
+        "type": "local",
+        "command": [
+          "brew",
+          "mcp-server"
+        ],
+        "disabled": false
       }
     },
-    "datadog": {
-      "type": "remote",
-      "url": "https://mcp.datadoghq.eu/v1/mcp?toolsets=core,alerting,dashboards,ddsql,rum&omit_tools=edit_datadog_notebook,create_datadog_notebook,create_datadog_monitor,upsert_datadog_dashboard,delete_datadog_dashboard,validate_dashboard_widget",
-      "enabled": false
-    },
-    "vercel": {
-      "type": "remote",
-      "url": "https://mcp.vercel.com",
-      "enabled": false
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp",
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_MCP_CLASSIC_PAT}",
-        "X-MCP-Toolsets": "default,actions"
-      },
-      "enabled": false
-    },
-    "homebrew": {
-      "type": "local",
-      "command": [
-        "brew",
-        "mcp-server"
-      ],
-      "enabled": true
-    }
   },
   "websearch": {
     "provider": "random",
