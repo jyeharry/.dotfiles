@@ -19,6 +19,8 @@
 !.config/ghostty/**/*
 !.config/git/
 !.config/git/**/*
+!.config/hunk/
+!.config/hunk/**/*
 !.config/hypr/
 !.config/hypr/*
 !.config/hypr/**/*
