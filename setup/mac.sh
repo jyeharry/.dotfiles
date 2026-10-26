@@ -17,6 +17,11 @@ if ! command -v brew &> /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+if ! command -v mise &> /dev/null; then
+  echo "\nInstalling mise"
+  curl -fsSL https://mise.run | sh || { echo 'Failed to install mise'; exit 1; }
+fi
+
 brew bundle --file ~/brews.txt || { echo 'Failed brew-installing something'; exit 1; }
 
 if command -v bat &> /dev/null; then
